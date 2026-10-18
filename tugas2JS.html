@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 2 MKK 3</title>
+</head>
+<body>
+
+    <script>
+        // 1. Menyimpan nama pembeli
+        var namaPembeli = "Budi";
+
+        // 2. Menyimpan harga dan jumlah setiap barang
+        var harganasigoreng = 15000;
+        var jumlahnasigoreng = 2;
+
+        var hargaesteh = 5000;
+        var jumlahesteh = 1;
+
+        var hargaroti = 7000;
+        var jumlahroti = 3;
+
+        // 3. Menghitung subtotal
+        var subtotal1 = harganasigoreng * jumlahnasigoreng;
+        var subtotal2 = hargaesteh * jumlahesteh;
+        var subtotal3 = hargaroti * jumlahroti;
+
+        // 4. Menghitung total belanja
+        var totalBelanja = subtotal1 + subtotal2 + subtotal3;
+
+        // 5. Menentukan diskon 10%
+        var diskon = 0;
+
+        if (totalBelanja >= 50000) {
+            diskon = totalBelanja * 0.10;
+        }
+
+        // 6. Menghitung total bayar
+        var totalBayar = totalBelanja - diskon;
+
+        // 7. Format mata uang Rupiah
+        function formatRupiah(angka) {
+            return "Rp" + angka.toLocaleString("id-ID");
+        }
+
+        // 8. Menampilkan hasil di Console
+        console.log("Pembeli       : " + namaPembeli);
+        console.log("Total Belanja : " + formatRupiah(totalBelanja));
+        console.log("Diskon        : " + formatRupiah(diskon));
+        console.log("Total Bayar   : " + formatRupiah(totalBayar));
+
+        // 9. Menampilkan hasil di halaman web
+        document.write("<h2>Invoice Belanja</h2>");
+        document.write("<pre>");
+        document.write("Pembeli       : " + namaPembeli + "\n");
+        document.write("Total Belanja : " + formatRupiah(totalBelanja) + "\n");
+        document.write("Diskon        : " + formatRupiah(diskon) + "\n");
+        document.write("Total Bayar   : " + formatRupiah(totalBayar));
+        document.write("</pre>");
+
+    </script>
+
+    <!-- 10. Tombol Print PDF -->
+    <button onclick="window.print()">Print PDF</button>
+
+</body>
+</html>
